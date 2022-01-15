@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Emirgan</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Counter.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky" data-scroll-header="" data-fixed-element="">
+        <div class="container px-0 px-xl-3">
+            <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="/Home">
+                <img class="d-none d-lg-block" src="/img/EmirganLogo.png" alt="Emirgan" width="153">
+            </a>
+
+            <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+                <div class="offcanvas-header navbar-shadow">
+                    <h5 class="mt-1 mb-0">Menu</h5>
+                    <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ">
+                    <!-- Menu-->
+                    <ul class="navbar-nav">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Unternehmen</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Product">Produkte</a>
+                        </li>
+                        @*<li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="Producte" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Produkte
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="Producte">
+                                <li><a class="dropdown-item" href="/AdminClient">Product Category 1</a></li>
+                                <li><a class="dropdown-item" href="/AdminIndustry">Product Category 2</a></li>
+                            </ul>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Home#Contact">Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Impressum">Impressum</a>
+                        </li>
+                        @*<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Admin
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/AdminClient">Client</a></li>
+                <li><a class="dropdown-item" href="/AdminIndustry">Industry</a></li>
+                <li><a class="dropdown-item" href="/AdminProduct">Product</a></li>
+                <li><a class="dropdown-item" href="/AdminSettings">Settings</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="page-wrapper">
+
+        @RenderBody()
+
+    </div>
+
+    <footer class="footer bg-dark pt-2 pt-md-6">
+        <div class="container pt-3 pt-md-0">
+            <div class="row pb-3">
+                <div class="col-md-10 mt-n2 pb-3 pb-md-0 mb-4">
+                   
+            
+                </div>
+
+                <hr class="my-0 border-light">
+                <div class="row align-items-center mt-3 py-4">
+                    <div class="col-md-6 order-md-2 text-md-end mb-3">
+                        <ul class="list-inline fs-sm mb-0">
+                            <li class="list-inline-item"><a class="nav-link-style nav-link-light" href="/Impressum">Impressum</a></li>
+                            <li class="list-inline-item"><a class="nav-link-style nav-link-light" href="/Home/Datenschutz">Datenschutz</a></li>
+                            <li class="list-inline-item"><a class="nav-link-style nav-link-light" href="#">Nutzungsbedingungen</a></li>
+                            <li class="list-inline-item"><a class="nav-link-style nav-link-light" href="#">Cookie-Einstellungen</a></li>
+                        </ul>
+                       
+                    </div>
+                    <div class="col-md-6 order-md-1 mb-3">
+                        <a class="d-block mb-3" href="index.html" style="width: 153px;"><img src="/img/EmirganLogo.png" alt="Emirgan"></a>
+                        <br />
+                        <p class="fs-sm mb-0"> <p class="fs-sm mb-0"><span class="text-light opacity-50 me-1">Copyright © 2022 Jürgen Doerner Handelsvertretungen GmbH</span></p>
+                    </div>
+                </div>
+
+
+
+            </div>
+           
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>$(document).ready(function () {
+            $('.counter').each(function () {
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                }, {
+                    duration: 4000,
+                    easing: 'swing',
+                    step: function (now) {
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+
+        });</script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

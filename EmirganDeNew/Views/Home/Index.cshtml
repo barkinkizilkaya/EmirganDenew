@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model EmirganDeNew.Models.MailModel
+
+
+
+<section class="container-fluid px-0 pb-5 pb-md-6">
+    <div class="row g-0 align-items-xl-center">
+        <div class="col-lg-12 col-md-12 text-center   ">
+            <img class="d-inline-block" src="img/Bridge.png" alt="Bridge">
+        </div>
+
+    </div>
+    <div class="row g-0 align-items-xl-center mt-5">
+        <div class="col-lg-12 col-md-12 text-center">
+
+            <h2 class="mb-grid-gutter pb-1">an ihrer Seite,Unterwegs zur eurer Ziele</h2>
+
+        </div>
+    </div>
+</section>
+
+
+<section class="bg-secondary py-5 py-md-6 mt-n4">
+    <div class="container py-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-10 text-center">
+                <h2>Kooperation mit den Herstellerpartnern</h2>
+                @*<p class="text-muted mb-5 pb-2">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae</p>*@
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 mb-grid-gutter">
+                <a class="card card-hover border-0 shadow mx-auto" href="#" style="max-width: 800px;">
+                    <img class="card-img-top" src="img/Back.jpg" alt="Industrial kitchen ">
+                    <div class="card-body">
+                        <h3 class="h5 mb-0">Industrial kitchen</h3>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section id="Contact" class="bg-primary bg-size-cover py-5 py-md-6" style="background-image: url(https://around.createx.studio/img/demo/business-consulting/cta-bg.png);">
+    <div class="container py-3 py-md-0">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-6 text-center text-md-start">
+                <h2 class="mb-4 pb-3 pb-md-0 mb-md-0">Kontaktieren Sie uns</h2>
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <div class="pt-5 pb-6 pt-md-6 mx-auto" style="max-width: 720px;">
+                    <div class="fancy-title title-border">
+                        <h4 class="">@ViewBag.message</h4>
+                        <br />  
+                    </div>
+
+                    @*<h2 class="h3 pb-4">Drop us a line</h2>*@
+                    <form asp-controller="Home" asp-action="Index" class="needs-validation row">
+                        <div class="col-sm-6 mb-3 pb-1">
+                            <label class="form-label" for="cont-fn">Vor-/ Nachname<sup class="text-danger ms-1">*</sup></label>
+                            <input asp-for="NameSurname" class="form-control" type="text" name="NameSurname" id="cont-fn" placeholder="Max Mustermann" required="">
+                            <span asp-validation-for="NameSurname" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-sm-6 mb-3 pb-1">
+                            <label class="form-label" for="cont-email">Email Adresse<sup class="text-danger ms-1">*</sup></label>
+                            <input asp-for="Email" class="form-control" type="email" name="Email" id="cont-email" placeholder="m.mustarmann@muster.de" required="">
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="col-sm-6 mb-3 pb-1">
+                            <label class="form-label" for="cont-phone">Telefonnummer</label>
+                            <input asp-for="TelephoneNumber" class="form-control bg-image-0" name="TelephoneNumber" type="text" id="cont-phone" data-format="custom" data-delimiter="-" data-blocks="2 4 2 2" placeholder="00-0000-00-00">
+                        </div>
+                        <div class="col-sm-6 mb-3 pb-1">
+                            <label class="form-label" for="cont-subject">Betreff</label>
+                            <input asp-for="Topic" class="form-control bg-image-0" type="text" name="Topic" id="cont-subject" placeholder="Ihre Betreff">
+                        </div>
+                        <div class="col-12 mb-3 pb-1">
+                            <label class="form-label" for="cont-message">Ihre Nachricht<sup class="text-danger ms-1">*</sup></label>
+                            <textarea asp-for="Message" class="form-control" id="cont-message" rows="4" name="Message" placeholder="Schreiben Sie Ihre Nachricht" required=""></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                        <div class="col-12 pt-2">
+                            <button class="btn btn-primary" type="submit">Senden</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+
+@{
+    ViewData["Title"] = "Impressum";
+}
+
+
+
+<div class="container">
+    <h1>Impressum</h1>
+    <div class="row">
+        <div class="col">
+            <address>
+                Angaben gemäß § 5 TMG: <b>Emirgan Naturprodukte Handels GmbH </b>(haftungsbeschränkt) <br />
+                Zeppelinstr. 6 <br />
+                85570 Marktschwaben <br /> <br />
+                Telefonnummer: 	+49 (0) 8121 226762 <br />
+                E-Mail:	        <a href="mailto:info@emirgan.de">info@emirgan.de</a> <br />
+                Website: 	    <a href="www.emirgan.de">www.emirgan.de</a> <br /> <br />
+                Registergericht: Amtsgericht München <br /> <br />
+                Registernummer:  HRB 146069 <br />
+                Vertretungsberechtigter Geschäftsführer: Mustafa Emirgan <br />
+                Umsatzsteuer-Identifikationsnummer
+                gemäß § 27 UStG: 				DE 813586817
+
+            </address>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</div>
+
+<br />
+<br />
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
